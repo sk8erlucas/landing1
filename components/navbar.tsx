@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
 
 export default function Navbar() {
   return (
@@ -9,29 +10,35 @@ export default function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100"
+      className="fixed top-0 left-0 right-0 z-50 bg-white/98 backdrop-blur-sm border-b border-blue-100 shadow-sm"
     >
-      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        <div className="flex items-center space-x-2">
-          <div className="w-10 h-10 bg-gradient-to-r from-amber-500 to-orange-500 rounded-full flex items-center justify-center">
-            <span className="text-white font-bold text-lg">A</span>
-          </div>
-          <span className="text-xl font-bold text-gray-800">Tu Abuelito Te La Presta</span>
+      <div className="container mx-auto px-4 py-3 flex items-center justify-between">
+        <div className="flex items-center space-x-3">
+          <Image
+            src="/abuelito_base.png"
+            alt="Tu Abuelito Te La Presta Logo"
+            width={50}
+            height={50}
+            className="rounded-full"
+          />
+          <span className="text-xl font-bold text-blue-900">Tu Abuelito Te La Presta</span>
         </div>
         <div className="hidden md:flex items-center space-x-6">
-          <a href="#inicio" className="text-gray-600 hover:text-amber-600 transition-colors">
+          <a href="#inicio" className="text-blue-700 hover:text-blue-600 transition-colors font-medium">
             Inicio
           </a>
-          <a href="#calculadora" className="text-gray-600 hover:text-amber-600 transition-colors">
+          <a href="#calculadora" className="text-blue-700 hover:text-blue-600 transition-colors font-medium">
             Calculadora
           </a>
-          <a href="#beneficios" className="text-gray-600 hover:text-amber-600 transition-colors">
+          <a href="#beneficios" className="text-blue-700 hover:text-blue-600 transition-colors font-medium">
             Beneficios
           </a>
-          <a href="#testimonios" className="text-gray-600 hover:text-amber-600 transition-colors">
+          <a href="#testimonios" className="text-blue-700 hover:text-blue-600 transition-colors font-medium">
             Testimonios
           </a>
-          <Button className="bg-amber-600 hover:bg-amber-700">Solicitar Préstamo</Button>
+          <Button className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 shadow-md">
+            Solicitar TV Ahora
+          </Button>
         </div>
       </div>
     </motion.nav>

@@ -13,40 +13,40 @@ export default function TestimonialsSection() {
   const testimonials = [
     {
       name: "María González",
-      location: "Monterrey, NL",
+      location: "Guadalajara, JAL",
       rating: 5,
-      text: "Necesitaba una lavadora urgente y el abuelito me ayudó súper rápido. En menos de 2 horas ya tenía el dinero en mi cuenta. ¡Increíble!",
-      purchase: "Lavadora Samsung",
-      image: "/placeholder.svg?height=80&width=80",
+      text: "Siempre soñé con tener una Smart TV grande para ver películas con mis hijos. El abuelito hizo mi sueño realidad en solo 2 horas. ¡Ahora disfrutamos nuestras noches de película!",
+      purchase: 'Smart TV Samsung 65"',
+      image: "https://images.unsplash.com/photo-1494790108755-2616b612b172?w=150&h=150&fit=crop&crop=face",
     },
     {
       name: "Carlos Ramírez",
-      location: "Mexicali, BC",
+      location: "Puebla, PUE",
       rating: 5,
-      text: "Mi hijo necesitaba una computadora para la escuela. El proceso fue súper fácil y los pagos semanales se ajustan perfecto a mi presupuesto.",
-      purchase: "Laptop HP",
-      image: "/placeholder.svg?height=80&width=80",
+      text: "Mi hijo quería una TV 4K para sus videojuegos. Los pagos semanales se ajustan perfecto a mi presupuesto y ver su sonrisa no tiene precio.",
+      purchase: "TV 4K LG 55\" Gaming",
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
     },
     {
       name: "Ana Martínez",
       location: "Monterrey, NL",
       rating: 5,
-      text: "La televisión de la sala se descompuso justo para la final del fútbol. Gracias al abuelito, pudimos ver el partido en una pantalla nueva.",
-      purchase: 'Smart TV 55"',
-      image: "/placeholder.svg?height=80&width=80",
+      text: "La TV de la sala se descompuso justo para las fiestas navideñas. Gracias al abuelito, toda la familia pudo reunirse a ver películas en una pantalla increíble.",
+      purchase: 'Smart TV OLED 55"',
+      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
     },
     {
       name: "Roberto Silva",
-      location: "Mexicali, BC",
+      location: "Tijuana, BC",
       rating: 5,
-      text: "Excelente servicio. Me ayudaron a conseguir el refrigerador que necesitaba para mi negocio. Muy recomendable, son de confianza.",
-      purchase: "Refrigerador comercial",
-      image: "/placeholder.svg?height=80&width=80",
+      text: "Quería sorprender a mi esposa con la TV de sus sueños para nuestro aniversario. El servicio fue excelente y la entrega súper rápida. ¡Misión cumplida!",
+      purchase: 'TV Premium 75" Samsung',
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
     },
   ]
 
   return (
-    <section id="testimonios" ref={ref} className="py-20 bg-gradient-to-b from-gray-50 to-white">
+    <section id="testimonios" ref={ref} className="py-20 bg-gradient-to-br from-sky-50 to-blue-100">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -54,9 +54,9 @@ export default function TestimonialsSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Lo que dice nuestra familia</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Familias que cumplieron su sueño</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Miles de familias mexicanas ya han confiado en nosotros para conseguir lo que necesitan
+            Miles de familias mexicanas ya disfrutan de la TV de sus sueños gracias al abuelito
           </p>
         </motion.div>
 
@@ -67,7 +67,7 @@ export default function TestimonialsSection() {
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300"
+              className="bg-white/90 backdrop-blur-sm border border-sky-100 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
             >
               <div className="flex items-start gap-4 mb-6">
                 <Image
@@ -82,17 +82,17 @@ export default function TestimonialsSection() {
                   <p className="text-gray-500 text-sm">{testimonial.location}</p>
                   <div className="flex items-center gap-1 mt-2">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" />
+                      <Star key={i} className="h-4 w-4 fill-blue-400 text-blue-400" />
                     ))}
                   </div>
                 </div>
-                <Quote className="h-8 w-8 text-amber-200" />
+                <Quote className="h-8 w-8 text-sky-200" />
               </div>
 
               <p className="text-gray-700 leading-relaxed mb-4 italic">&ldquo;{testimonial.text}&rdquo;</p>
 
-              <div className="bg-amber-50 rounded-lg p-3">
-                <p className="text-sm text-amber-700 font-medium">Compró: {testimonial.purchase}</p>
+              <div className="bg-sky-50 rounded-lg p-3 border border-sky-100">
+                <p className="text-sm text-sky-700 font-medium">📺 Compró: {testimonial.purchase}</p>
               </div>
             </motion.div>
           ))}

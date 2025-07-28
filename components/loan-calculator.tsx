@@ -1,7 +1,6 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
 import { Slider } from "@/components/ui/slider"
 import { Card, CardContent } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
@@ -30,13 +29,6 @@ export default function LoanCalculator() {
 
   const totalWeeks = 26
   const ivaRate = 0.16
-
-  const openWhatsApp = (message: string) => {
-    const phoneNumber = "528124747218"
-    const encodedMessage = encodeURIComponent(message)
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`
-    window.open(whatsappUrl, "_blank")
-  }
 
   const calculateLoan = (index: number): LoanDetails => {
     const { amount, weeklyPayment } = loanOptions[index]
@@ -75,8 +67,8 @@ export default function LoanCalculator() {
       <Card className="bg-white border-0 shadow-2xl">
         <CardContent className="p-8 space-y-6">
           <div className="text-center space-y-2">
-            <h3 className="text-lg font-medium text-gray-700">Importe a solicitar</h3>
-            <div className="text-3xl font-bold text-amber-600">{formatCurrency(loanOptions[selectedIndex].amount)}</div>
+            <h3 className="text-lg font-medium text-gray-700">Importe a solicitar para tu TV</h3>
+            <div className="text-3xl font-bold text-sky-600">{formatCurrency(loanOptions[selectedIndex].amount)}</div>
           </div>
 
           <div className="space-y-4">
@@ -97,7 +89,7 @@ export default function LoanCalculator() {
           {loanDetails && (
             <div className="space-y-4">
               <div className="text-center">
-                <div className="text-lg font-semibold text-amber-700 mb-2">
+                <div className="text-lg font-semibold text-sky-700 mb-2">
                   {loanDetails.totalPayments} PAGOS SEMANALES DE {formatCurrency(loanDetails.weeklyPayment)}
                 </div>
               </div>
@@ -120,34 +112,25 @@ export default function LoanCalculator() {
                 <Separator />
                 <div className="flex justify-between font-semibold text-base">
                   <span className="text-gray-800">Total a pagar:</span>
-                  <span className="text-amber-600">{formatCurrency(loanDetails.totalWithIva)}</span>
+                  <span className="text-sky-600">{formatCurrency(loanDetails.totalWithIva)}</span>
                 </div>
               </div>
 
-              <div className="bg-amber-50 p-3 rounded-lg">
-                <div className="text-xs text-amber-600">
+              <div className="bg-sky-50 p-3 rounded-lg border border-sky-100">
+                <div className="text-xs text-sky-700">
+                  📺 Simulación informativa para tu TV soñada
+                </div>
+                <div className="text-xs text-sky-600 mt-1">
                   *Costo Anual Total para fines informativos y de comparación
                 </div>
               </div>
             </div>
           )}
 
-          <Button
-            onClick={() => {
-              if (loanDetails) {
-                openWhatsApp(
-                  `¡Hola! Me interesa solicitar un préstamo de ${formatCurrency(
-                    loanDetails.amount,
-                  )} con pagos semanales de ${formatCurrency(
-                    loanDetails.weeklyPayment,
-                  )}. ¿Podrían ayudarme con el proceso?`,
-                )
-              }
-            }}
-            className="w-full bg-amber-600 hover:bg-amber-700 text-white font-semibold py-3 rounded-lg"
-          >
-            Continuar
-          </Button>
+          <div className="bg-gradient-to-r from-sky-500 to-blue-500 text-white p-4 rounded-lg text-center">
+            <div className="text-sm font-medium mb-1">🎉 ¡Simulación completada!</div>
+            <div className="text-xs">Visita nuestro contacto para solicitar tu TV</div>
+          </div>
 
           <p className="text-xs text-gray-500 text-center leading-relaxed">
             Sujeto a aprobación crediticia. Las condiciones pueden variar de acuerdo al perfil de riesgo del cliente.
