@@ -11,7 +11,7 @@ export default function CalculatorSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section id="calculadora" ref={ref} className="py-20 bg-gradient-to-b from-blue-50 to-sky-50">
+    <section id="calculadora" ref={ref} className="py-20 bg-gradient-to-b from-green-50 to-emerald-50">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -19,10 +19,10 @@ export default function CalculatorSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-blue-900 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-purple-900 mb-6">
             Calcula tu TV soñada
           </h2>
-          <p className="text-xl text-blue-800 max-w-3xl mx-auto">
+          <p className="text-xl text-purple-800 max-w-3xl mx-auto">
             Descubre cuánto puedes obtener para tu nueva televisión y cuáles serían tus pagos semanales. 
             ¡Tu familia merece entretenimiento de calidad!
           </p>

@@ -13,7 +13,7 @@ export default function ContactSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section ref={ref} className="py-20 bg-gradient-to-br from-sky-900 to-blue-800 text-white">
+    <section ref={ref} className="py-20 bg-gradient-to-br from-purple-900 to-violet-800 text-white">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -22,7 +22,7 @@ export default function ContactSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">¿Listo para tu TV soñada?</h2>
-          <p className="text-xl text-sky-200 max-w-3xl mx-auto">
+          <p className="text-xl text-green-200 max-w-3xl mx-auto">
             Contáctanos y en menos de 2 horas podrás estar disfrutando de tu nueva TV. Tu abuelito te está esperando.
           </p>
         </motion.div>
@@ -37,51 +37,51 @@ export default function ContactSection() {
 
             <div className="space-y-6">
               <div className="flex items-center gap-4">
-                <div className="bg-sky-500 w-12 h-12 rounded-full flex items-center justify-center">
+                <div className="bg-green-500 w-12 h-12 rounded-full flex items-center justify-center">
                   <Phone className="h-6 w-6" />
                 </div>
                 <div>
                   <h4 className="font-semibold">WhatsApp</h4>
-                  <p className="text-sky-200">+52 812 474 7218</p>
+                  <p className="text-green-200">+52 812 474 7218</p>
                 </div>
               </div>
 
               <div className="flex items-center gap-4">
-                <div className="bg-sky-500 w-12 h-12 rounded-full flex items-center justify-center">
+                <div className="bg-green-500 w-12 h-12 rounded-full flex items-center justify-center">
                   <Mail className="h-6 w-6" />
                 </div>
                 <div>
                   <h4 className="font-semibold">Email</h4>
-                  <p className="text-sky-200">contacto@tuabuelitotelpresta.com</p>
+                  <p className="text-green-200">contacto@tuabuelitotelpresta.com</p>
                 </div>
               </div>
 
               <div className="flex items-center gap-4">
-                <div className="bg-sky-500 w-12 h-12 rounded-full flex items-center justify-center">
+                <div className="bg-green-500 w-12 h-12 rounded-full flex items-center justify-center">
                   <MapPin className="h-6 w-6" />
                 </div>
                 <div>
                   <h4 className="font-semibold">Ubicación</h4>
-                  <p className="text-sky-200">Mexicali, BC y Monterrey, NL</p>
+                  <p className="text-green-200">Mexicali, BC y Monterrey, NL</p>
                 </div>
               </div>
 
               <div className="flex items-center gap-4">
-                <div className="bg-sky-500 w-12 h-12 rounded-full flex items-center justify-center">
+                <div className="bg-green-500 w-12 h-12 rounded-full flex items-center justify-center">
                   <Clock className="h-6 w-6" />
                 </div>
                 <div>
                   <h4 className="font-semibold">Horarios</h4>
-                  <p className="text-sky-200">Lunes a Viernes: 9:00 AM - 7:00 PM</p>
-                  <p className="text-sky-200">Sábados: 9:00 AM - 2:00 PM</p>
+                  <p className="text-green-200">Lunes a Viernes: 9:00 AM - 7:00 PM</p>
+                  <p className="text-green-200">Sábados: 9:00 AM - 2:00 PM</p>
                 </div>
               </div>
             </div>
 
-            <div className="mt-8 p-6 bg-sky-500 rounded-2xl">
+            <div className="mt-8 p-6 bg-green-500 rounded-2xl">
               <h4 className="font-bold text-lg mb-2">📺 ¡Tu TV te está esperando!</h4>
               <p className="mb-4">Escríbenos por WhatsApp y en 2 horas tendrás tu TV soñada</p>
-              <Button className="bg-white text-sky-600 hover:bg-gray-100 font-semibold">Chatear ahora</Button>
+              <Button className="bg-white text-green-600 hover:bg-gray-100 font-semibold">Chatear ahora</Button>
             </div>
           </motion.div>
 
@@ -90,7 +90,7 @@ export default function ContactSection() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <div className="bg-white/95 backdrop-blur-sm border border-sky-100 rounded-2xl p-8 text-gray-800">
+            <div className="bg-white/95 backdrop-blur-sm border border-purple-100 rounded-2xl p-8 text-gray-800">
               <h3 className="text-2xl font-bold mb-6">Solicita tu TV soñada</h3>
 
               <form className="space-y-6">
@@ -112,7 +112,7 @@ export default function ContactSection() {
 
                 <div>
                   <label className="block text-sm font-medium mb-2">¿Qué TV quieres?</label>
-                  <select className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-sky-500">
+                  <select className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500">
                     <option>Smart TV 32&quot;</option>
                     <option>Smart TV 43&quot;</option>
                     <option>Smart TV 55&quot;</option>
@@ -129,7 +129,7 @@ export default function ContactSection() {
                   <Textarea placeholder="¿Para qué quieres tu TV? ¿Películas familiares, gaming, deportes? Cuéntanos..." rows={4} />
                 </div>
 
-                <Button className="w-full bg-sky-600 hover:bg-sky-700 text-white py-3 font-semibold">🚀 Solicitar mi TV ahora</Button>
+                <Button className="w-full bg-green-600 hover:bg-green-700 text-white py-3 font-semibold">🚀 Solicitar mi TV ahora</Button>
               </form>
             </div>
           </motion.div>

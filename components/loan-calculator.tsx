@@ -68,7 +68,7 @@ export default function LoanCalculator() {
         <CardContent className="p-8 space-y-6">
           <div className="text-center space-y-2">
             <h3 className="text-lg font-medium text-gray-700">Importe a solicitar para tu TV</h3>
-            <div className="text-3xl font-bold text-sky-600">{formatCurrency(loanOptions[selectedIndex].amount)}</div>
+            <div className="text-3xl font-bold text-green-600">{formatCurrency(loanOptions[selectedIndex].amount)}</div>
           </div>
 
           <div className="space-y-4">
@@ -89,7 +89,7 @@ export default function LoanCalculator() {
           {loanDetails && (
             <div className="space-y-4">
               <div className="text-center">
-                <div className="text-lg font-semibold text-sky-700 mb-2">
+                <div className="text-lg font-semibold text-purple-700 mb-2">
                   {loanDetails.totalPayments} PAGOS SEMANALES DE {formatCurrency(loanDetails.weeklyPayment)}
                 </div>
               </div>
@@ -112,22 +112,22 @@ export default function LoanCalculator() {
                 <Separator />
                 <div className="flex justify-between font-semibold text-base">
                   <span className="text-gray-800">Total a pagar:</span>
-                  <span className="text-sky-600">{formatCurrency(loanDetails.totalWithIva)}</span>
+                  <span className="text-green-600">{formatCurrency(loanDetails.totalWithIva)}</span>
                 </div>
               </div>
 
-              <div className="bg-sky-50 p-3 rounded-lg border border-sky-100">
-                <div className="text-xs text-sky-700">
+              <div className="bg-purple-50 p-3 rounded-lg border border-purple-100">
+                <div className="text-xs text-purple-700">
                   📺 Simulación informativa para tu TV soñada
                 </div>
-                <div className="text-xs text-sky-600 mt-1">
+                <div className="text-xs text-purple-600 mt-1">
                   *Costo Anual Total para fines informativos y de comparación
                 </div>
               </div>
             </div>
           )}
 
-          <div className="bg-gradient-to-r from-sky-500 to-blue-500 text-white p-4 rounded-lg text-center">
+          <div className="bg-gradient-to-r from-green-500 to-emerald-500 text-white p-4 rounded-lg text-center">
             <div className="text-sm font-medium mb-1">🎉 ¡Simulación completada!</div>
             <div className="text-xs">Visita nuestro contacto para solicitar tu TV</div>
           </div>

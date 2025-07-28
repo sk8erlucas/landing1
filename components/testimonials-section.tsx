@@ -17,7 +17,7 @@ export default function TestimonialsSection() {
       rating: 5,
       text: "Siempre soñé con tener una Smart TV grande para ver películas con mis hijos. El abuelito hizo mi sueño realidad en solo 2 horas. ¡Ahora disfrutamos nuestras noches de película!",
       purchase: 'Smart TV Samsung 65"',
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b172?w=150&h=150&fit=crop&crop=face",
+      image: "https://images.unsplash.com/photo-1559941089-d7a5552c7f96?w=150&h=150&fit=crop&crop=face",
     },
     {
       name: "Carlos Ramírez",
@@ -46,7 +46,7 @@ export default function TestimonialsSection() {
   ]
 
   return (
-    <section id="testimonios" ref={ref} className="py-20 bg-gradient-to-br from-sky-50 to-blue-100">
+    <section id="testimonios" ref={ref} className="py-20 bg-gradient-to-br from-green-50 to-emerald-100">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -54,8 +54,8 @@ export default function TestimonialsSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Familias que cumplieron su sueño</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-purple-900 mb-6">Familias que cumplieron su sueño</h2>
+          <p className="text-xl text-purple-700 max-w-3xl mx-auto">
             Miles de familias mexicanas ya disfrutan de la TV de sus sueños gracias al abuelito
           </p>
         </motion.div>
@@ -67,7 +67,7 @@ export default function TestimonialsSection() {
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-white/90 backdrop-blur-sm border border-sky-100 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
+              className="bg-white/90 backdrop-blur-sm border border-purple-100 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
             >
               <div className="flex items-start gap-4 mb-6">
                 <Image
@@ -82,17 +82,17 @@ export default function TestimonialsSection() {
                   <p className="text-gray-500 text-sm">{testimonial.location}</p>
                   <div className="flex items-center gap-1 mt-2">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-blue-400 text-blue-400" />
+                      <Star key={i} className="h-4 w-4 fill-green-400 text-green-400" />
                     ))}
                   </div>
                 </div>
-                <Quote className="h-8 w-8 text-sky-200" />
+                <Quote className="h-8 w-8 text-purple-200" />
               </div>
 
               <p className="text-gray-700 leading-relaxed mb-4 italic">&ldquo;{testimonial.text}&rdquo;</p>
 
-              <div className="bg-sky-50 rounded-lg p-3 border border-sky-100">
-                <p className="text-sm text-sky-700 font-medium">📺 Compró: {testimonial.purchase}</p>
+              <div className="bg-purple-50 rounded-lg p-3 border border-purple-100">
+                <p className="text-sm text-purple-700 font-medium">📺 Compró: {testimonial.purchase}</p>
               </div>
             </motion.div>
           ))}

@@ -14,42 +14,42 @@ export default function BenefitsSection() {
       icon: Clock,
       title: "TV el Mismo Día",
       description: "Aprobación rápida y entrega inmediata. Tu familia no puede esperar más.",
-      color: "bg-blue-100 text-blue-600",
+      color: "bg-green-100 text-green-600",
     },
     {
       icon: Shield,
       title: "Compra Segura",
       description: "Proceso confiable y protegido. Tu sueño está en buenas manos.",
-      color: "bg-sky-100 text-sky-600",
+      color: "bg-purple-100 text-purple-600",
     },
     {
       icon: CreditCard,
       title: "Pagos Cómodos",
       description: "Cuotas semanales que se adaptan a tu presupuesto familiar.",
-      color: "bg-blue-100 text-blue-600",
+      color: "bg-green-100 text-green-600",
     },
     {
       icon: Smartphone,
       title: "Proceso Simple",
       description: "Todo desde tu celular. Tan fácil como elegir qué ver en tu nueva TV.",
-      color: "bg-cyan-100 text-cyan-600",
+      color: "bg-purple-100 text-purple-600",
     },
     {
       icon: CheckCircle,
       title: "Sin Complicaciones",
       description: "Solo necesitas ganas de disfrutar en grande con tu familia.",
-      color: "bg-blue-100 text-blue-600",
+      color: "bg-green-100 text-green-600",
     },
     {
       icon: Users,
       title: "Como Familia",
       description: "Te acompañamos hasta que tengas tu TV en casa, funcionando perfecta.",
-      color: "bg-sky-100 text-sky-600",
+      color: "bg-purple-100 text-purple-600",
     },
   ]
 
   return (
-    <section id="beneficios" ref={ref} className="py-20 bg-gradient-to-br from-sky-50 to-blue-100">
+    <section id="beneficios" ref={ref} className="py-20 bg-gradient-to-br from-purple-50 to-violet-100">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -57,8 +57,8 @@ export default function BenefitsSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">¿Por qué elegir tu TV con abuelito?</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-purple-900 mb-6">¿Por qué elegir tu TV con abuelito?</h2>
+          <p className="text-xl text-purple-700 max-w-3xl mx-auto">
             Te ayudamos a conseguir la TV de tus sueños con la confianza y facilidad que tu familia merece
           </p>
         </motion.div>
@@ -70,13 +70,13 @@ export default function BenefitsSection() {
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-white/80 backdrop-blur-sm border border-sky-100 rounded-2xl p-8 hover:shadow-xl hover:bg-white transition-all duration-300"
+              className="bg-white/80 backdrop-blur-sm border border-purple-100 rounded-2xl p-8 hover:shadow-xl hover:bg-white transition-all duration-300"
             >
               <div className={`w-16 h-16 rounded-full ${benefit.color} flex items-center justify-center mb-6`}>
                 <benefit.icon className="h-8 w-8" />
               </div>
-              <h3 className="text-xl font-bold text-gray-800 mb-4">{benefit.title}</h3>
-              <p className="text-gray-600 leading-relaxed">{benefit.description}</p>
+              <h3 className="text-xl font-bold text-purple-900 mb-4">{benefit.title}</h3>
+              <p className="text-purple-700 leading-relaxed">{benefit.description}</p>
             </motion.div>
           ))}
         </div>
