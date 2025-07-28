@@ -4,12 +4,13 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Zap, Shield, Clock } from "lucide-react"
 import Image from "next/image"
+import LoanCalculator from "@/components/loan-calculator"
 
 export default function HeroSection() {
   return (
-    <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-purple-50 via-white to-violet-50">
+    <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
-      <div className="absolute inset-0 z-0 opacity-20">
+      <div className="absolute inset-0 z-0">
         <Image
           src="/hero2.jpg"
           alt="Familia disfrutando su nueva televisión"
@@ -17,7 +18,7 @@ export default function HeroSection() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-900/30 via-violet-800/20 to-transparent"></div>
+        <div className="absolute inset-0 bg-black/40"></div>
       </div>
 
       <div className="relative z-10 container mx-auto px-4 py-20">
@@ -26,26 +27,26 @@ export default function HeroSection() {
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-purple-900"
+            className="text-white lg:text-left text-center"
           >
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-5xl md:text-6xl font-bold leading-tight mb-6"
+              className="text-5xl md:text-6xl font-bold leading-tight mb-6 font-heading"
             >
               ¡Cumple tu sueño de
-              <span className="block text-green-600 bg-gradient-to-r from-green-500 to-emerald-600 bg-clip-text text-transparent">tener esa TV!</span>
+              <span className="block text-green-400 bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent">tener esa TV!</span>
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-xl md:text-2xl mb-8 text-purple-800 leading-relaxed"
+              className="text-xl md:text-2xl mb-8 text-gray-100 leading-relaxed font-body"
             >
               Como un abuelo cariñoso, te ayudamos a conseguir la televisión que tanto deseas.
-              <span className="block mt-2 text-green-600 font-semibold">¡Tu familia se lo merece!</span>
+              <span className="block mt-2 text-green-400 font-semibold">¡Tu familia se lo merece!</span>
             </motion.p>
 
             <motion.div
@@ -61,7 +62,7 @@ export default function HeroSection() {
               <Button
                 size="lg"
                 variant="outline"
-                className="text-purple-600 border-purple-300 hover:bg-purple-50 hover:text-purple-700 text-lg px-8 py-4 bg-white/80 backdrop-blur-sm"
+                className="text-white border-white/30 hover:bg-white/10 hover:text-white text-lg px-8 py-4 bg-white/10 backdrop-blur-sm"
               >
                 Calcular Cuotas
               </Button>
@@ -74,54 +75,28 @@ export default function HeroSection() {
               className="flex flex-wrap gap-6"
             >
               <div className="flex items-center gap-2">
-                <Zap className="h-5 w-5 text-green-500" />
-                <span className="text-sm text-purple-800">Aprobación en minutos</span>
+                <Zap className="h-5 w-5 text-green-400" />
+                <span className="text-sm text-gray-100">Aprobación en minutos</span>
               </div>
               <div className="flex items-center gap-2">
-                <Shield className="h-5 w-5 text-green-500" />
-                <span className="text-sm text-purple-800">100% seguro</span>
+                <Shield className="h-5 w-5 text-green-400" />
+                <span className="text-sm text-gray-100">100% seguro</span>
               </div>
               <div className="flex items-center gap-2">
-                <Clock className="h-5 w-5 text-green-500" />
-                <span className="text-sm text-purple-800">TV el mismo día</span>
+                <Clock className="h-5 w-5 text-green-400" />
+                <span className="text-sm text-gray-100">TV el mismo día</span>
               </div>
             </motion.div>
           </motion.div>
 
+          {/* Calculator */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             className="relative"
           >
-            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-purple-200 shadow-xl">
-              <h3 className="text-2xl font-bold text-purple-900 mb-6 text-center">Tipos de TV que puedes conseguir</h3>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-gradient-to-br from-purple-50 to-violet-100 rounded-lg p-4 text-center border border-purple-200 hover:shadow-md transition-shadow">
-                  <div className="text-4xl mb-3">📺</div>
-                  <span className="text-blue-900 text-sm font-semibold">Smart TV</span>
-                  <p className="text-blue-700 text-xs mt-1">32&quot; - 75&quot;</p>
-                </div>
-                <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg p-4 text-center border border-blue-200 hover:shadow-md transition-shadow">
-                  <div className="text-4xl mb-3">�️</div>
-                  <span className="text-blue-900 text-sm font-semibold">4K Ultra HD</span>
-                  <p className="text-blue-700 text-xs mt-1">Calidad premium</p>
-                </div>
-                <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg p-4 text-center border border-blue-200 hover:shadow-md transition-shadow">
-                  <div className="text-4xl mb-3">�</div>
-                  <span className="text-blue-900 text-sm font-semibold">Gaming TV</span>
-                  <p className="text-blue-700 text-xs mt-1">Para gamers</p>
-                </div>
-                <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg p-4 text-center border border-blue-200 hover:shadow-md transition-shadow">
-                  <div className="text-4xl mb-3">✨</div>
-                  <span className="text-blue-900 text-sm font-semibold">OLED/QLED</span>
-                  <p className="text-blue-700 text-xs mt-1">Última tecnología</p>
-                </div>
-              </div>
-              <div className="mt-6 text-center">
-                <p className="text-blue-700 text-sm">Desde <span className="font-bold text-blue-900">$2,999</span> hasta <span className="font-bold text-blue-900">$49,999</span></p>
-              </div>
-            </div>
+            <LoanCalculator />
           </motion.div>
         </div>
       </div>
@@ -136,12 +111,12 @@ export default function HeroSection() {
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
-          className="w-6 h-10 border-2 border-blue-400 rounded-full flex justify-center"
+          className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center"
         >
           <motion.div
             animate={{ y: [0, 12, 0] }}
             transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
-            className="w-1 h-3 bg-blue-400 rounded-full mt-2"
+            className="w-1 h-3 bg-white/70 rounded-full mt-2"
           />
         </motion.div>
       </motion.div>

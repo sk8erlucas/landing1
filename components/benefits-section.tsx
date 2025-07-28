@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef } from "react"
 import { Clock, Shield, CreditCard, Smartphone, CheckCircle, Users } from "lucide-react"
+import Image from "next/image"
 
 export default function BenefitsSection() {
   const ref = useRef(null)
@@ -57,7 +58,7 @@ export default function BenefitsSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-purple-900 mb-6">¿Por qué elegir tu TV con abuelito?</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-purple-900 mb-6 font-heading">¿Por qué elegir tu TV con abuelito?</h2>
           <p className="text-xl text-purple-700 max-w-3xl mx-auto">
             Te ayudamos a conseguir la TV de tus sueños con la confianza y facilidad que tu familia merece
           </p>
@@ -75,8 +76,8 @@ export default function BenefitsSection() {
               <div className={`w-16 h-16 rounded-full ${benefit.color} flex items-center justify-center mb-6`}>
                 <benefit.icon className="h-8 w-8" />
               </div>
-              <h3 className="text-xl font-bold text-purple-900 mb-4">{benefit.title}</h3>
-              <p className="text-purple-700 leading-relaxed">{benefit.description}</p>
+              <h3 className="text-xl font-bold text-purple-900 mb-4 font-heading">{benefit.title}</h3>
+              <p className="text-purple-700 leading-relaxed font-body font-semibold">{benefit.description}</p>
             </motion.div>
           ))}
         </div>
@@ -85,15 +86,24 @@ export default function BenefitsSection() {
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-16 bg-gradient-to-r from-amber-500 to-orange-500 rounded-2xl p-8 md:p-12 text-center text-white"
+          className="mt-16 bg-gradient-to-r from-purple-600 via-purple-700 to-violet-700 rounded-2xl p-8 md:p-12 text-center text-white shadow-2xl border-4 border-purple-200"
         >
-          <h3 className="text-3xl md:text-4xl font-bold mb-4">¿Listo para conseguir lo que necesitas?</h3>
-          <p className="text-xl mb-8 opacity-90">Miles de familias ya han confiado en nosotros para mejorar su hogar</p>
+          <div className="flex justify-center mb-6">
+            <Image
+              src="/abuelito_base.png"
+              alt="Tu Abuelito Te La Presta Logo"
+              width={80}
+              height={80}
+              className="rounded-full border-4 border-white/20"
+            />
+          </div>
+          <h3 className="text-3xl md:text-4xl font-bold mb-4 font-heading">¿Listo para conseguir lo que necesitas?</h3>
+          <p className="text-xl mb-8 opacity-90 font-body font-semibold">Miles de familias ya han confiado en nosotros para conseguir la TV de sus sueños</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-amber-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-              Solicitar Préstamo
+            <button className="bg-white text-purple-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors font-body">
+              Conseguir Mi TV
             </button>
-            <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-amber-600 transition-colors">
+            <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-purple-600 transition-colors font-body">
               Hablar por WhatsApp
             </button>
           </div>

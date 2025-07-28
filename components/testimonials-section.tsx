@@ -54,7 +54,7 @@ export default function TestimonialsSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-purple-900 mb-6">Familias que cumplieron su sueño</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-purple-900 mb-6 font-heading">Familias que cumplieron su sueño</h2>
           <p className="text-xl text-purple-700 max-w-3xl mx-auto">
             Miles de familias mexicanas ya disfrutan de la TV de sus sueños gracias al abuelito
           </p>
@@ -78,7 +78,7 @@ export default function TestimonialsSection() {
                   className="w-16 h-16 rounded-full object-cover"
                 />
                 <div className="flex-1">
-                  <h4 className="font-bold text-gray-800 text-lg">{testimonial.name}</h4>
+                  <h4 className="font-bold text-gray-800 text-lg font-heading">{testimonial.name}</h4>
                   <p className="text-gray-500 text-sm">{testimonial.location}</p>
                   <div className="flex items-center gap-1 mt-2">
                     {[...Array(testimonial.rating)].map((_, i) => (
@@ -89,7 +89,7 @@ export default function TestimonialsSection() {
                 <Quote className="h-8 w-8 text-purple-200" />
               </div>
 
-              <p className="text-gray-700 leading-relaxed mb-4 italic">&ldquo;{testimonial.text}&rdquo;</p>
+              <p className="text-gray-700 leading-relaxed mb-4 italic font-body">&ldquo;{testimonial.text}&rdquo;</p>
 
               <div className="bg-purple-50 rounded-lg p-3 border border-purple-100">
                 <p className="text-sm text-purple-700 font-medium">📺 Compró: {testimonial.purchase}</p>

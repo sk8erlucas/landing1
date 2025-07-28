@@ -67,7 +67,7 @@ export default function LoanCalculator() {
       <Card className="bg-white border-0 shadow-2xl">
         <CardContent className="p-8 space-y-6">
           <div className="text-center space-y-2">
-            <h3 className="text-lg font-medium text-gray-700">Importe a solicitar para tu TV</h3>
+            <h3 className="text-lg font-medium text-gray-700 font-heading">Importe a solicitar para tu TV</h3>
             <div className="text-3xl font-bold text-green-600">{formatCurrency(loanOptions[selectedIndex].amount)}</div>
           </div>
 

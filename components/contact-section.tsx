@@ -21,7 +21,7 @@ export default function ContactSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">¿Listo para tu TV soñada?</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 font-heading">¿Listo para tu TV soñada?</h2>
           <p className="text-xl text-green-200 max-w-3xl mx-auto">
             Contáctanos y en menos de 2 horas podrás estar disfrutando de tu nueva TV. Tu abuelito te está esperando.
           </p>
