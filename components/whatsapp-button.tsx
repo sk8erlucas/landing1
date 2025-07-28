@@ -32,7 +32,7 @@ export default function WhatsAppButton() {
         initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5, delay: 1.5 }}
-        className="absolute right-16 top-1/2 transform -translate-y-1/2 bg-white text-gray-800 px-4 py-3 rounded-lg shadow-lg whitespace-nowrap"
+        className="absolute right-20 bottom-0 transform bg-white text-gray-800 px-4 py-3 rounded-lg shadow-lg whitespace-nowrap"
       >
         <div className="text-sm font-medium leading-tight">📺 ¡Tu TV te espera!</div>
         <div className="text-xs text-gray-600 leading-tight">Chatea para conseguirla</div>

@@ -17,7 +17,7 @@ export default function TestimonialsSection() {
       rating: 5,
       text: "Siempre soñé con tener una Smart TV grande para ver películas con mis hijos. El abuelito hizo mi sueño realidad en solo 2 horas. ¡Ahora disfrutamos nuestras noches de película!",
       purchase: 'Smart TV Samsung 65"',
-      image: "https://images.unsplash.com/photo-1559941089-d7a5552c7f96?w=150&h=150&fit=crop&crop=face",
+      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop&crop=face",
     },
     {
       name: "Carlos Ramírez",
