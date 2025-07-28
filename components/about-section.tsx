@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef } from "react"
 import { Heart, Users, Award, TrendingUp } from "lucide-react"
+import Image from "next/image"
 
 export default function AboutSection() {
   const ref = useRef(null)
@@ -18,9 +19,11 @@ export default function AboutSection() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
-            <img
-              src="/placeholder.svg?height=600&width=800"
+            <Image
+              src="/giving_money.webp"
               alt="Abuelito ayudando a la familia"
+              width={600}
+              height={400}
               className="rounded-2xl shadow-2xl w-full"
             />
           </motion.div>

@@ -3,7 +3,8 @@
 import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef } from "react"
-import LoanCalculator from "@/components/loan-calculator"
+import LoanCalculator from "./loan-calculator"
+import Image from "next/image"
 
 export default function CalculatorSection() {
   const ref = useRef(null)
@@ -30,9 +31,11 @@ export default function CalculatorSection() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <img
-              src="/placeholder.svg?height=600&width=800"
+            <Image
+              src="/calculator.jpeg"
               alt="Familia calculando préstamo"
+              width={800}
+              height={600}
               className="rounded-2xl shadow-2xl w-full"
             />
           </motion.div>

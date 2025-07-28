@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef } from "react"
 import { Star, Quote } from "lucide-react"
+import Image from "next/image"
 
 export default function TestimonialsSection() {
   const ref = useRef(null)
@@ -69,9 +70,11 @@ export default function TestimonialsSection() {
               className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
               <div className="flex items-start gap-4 mb-6">
-                <img
+                <Image
                   src={testimonial.image || "/placeholder.svg"}
                   alt={testimonial.name}
+                  width={64}
+                  height={64}
                   className="w-16 h-16 rounded-full object-cover"
                 />
                 <div className="flex-1">
@@ -86,7 +89,7 @@ export default function TestimonialsSection() {
                 <Quote className="h-8 w-8 text-amber-200" />
               </div>
 
-              <p className="text-gray-700 leading-relaxed mb-4 italic">"{testimonial.text}"</p>
+              <p className="text-gray-700 leading-relaxed mb-4 italic">&ldquo;{testimonial.text}&rdquo;</p>
 
               <div className="bg-amber-50 rounded-lg p-3">
                 <p className="text-sm text-amber-700 font-medium">Compró: {testimonial.purchase}</p>

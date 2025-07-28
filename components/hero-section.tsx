@@ -3,16 +3,19 @@
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Zap, Shield, Clock } from "lucide-react"
+import Image from "next/image"
 
 export default function HeroSection() {
   return (
     <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <img
-          src="/placeholder.svg?height=1080&width=1920"
+        <Image
+          src="/hero.webp"
           alt="Tienda de electrónicos moderna"
-          className="w-full h-full object-cover"
+          fill
+          className="object-cover"
+          priority
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
       </div>
