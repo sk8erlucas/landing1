@@ -33,4 +33,8 @@
   .font-sans {
     font-family: 'Inter', system-ui, sans-serif;
   }
+
+  .animate-spin-slow {
+    animation: spin 8s linear infinite;
+  }
 }

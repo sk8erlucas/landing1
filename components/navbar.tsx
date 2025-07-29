@@ -23,26 +23,18 @@ export default function Navbar() {
           />
           <span className="text-xl font-bold text-purple-900 font-heading">Mi abuelito te presta</span>
         </div>
-        <div className="hidden md:flex items-center space-x-6">
-          <a href="#inicio" className="text-purple-700 hover:text-purple-600 transition-colors font-medium font-body">
-            Inicio
-          </a>
-          <a href="#beneficios" className="text-purple-700 hover:text-purple-600 transition-colors font-medium font-body">
-            Beneficios
-          </a>
-          <a href="#testimonios" className="text-purple-700 hover:text-purple-600 transition-colors font-medium font-body">
-            Testimonios
-          </a>
-          <a href="#preguntas" className="text-purple-700 hover:text-purple-600 transition-colors font-medium font-body">
-            Preguntas
-          </a>
-          <a href="#contacto" className="text-purple-700 hover:text-purple-600 transition-colors font-medium font-body">
-            Contacto
-          </a>
-          <Button className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 shadow-md rounded-full px-6 py-2">
-            Solicitar TV Ahora
-          </Button>
-        </div>
+        <Button 
+          onClick={() => {
+            const phoneNumber = "528124747218"
+            const message = "¡Hola! Me interesa solicitar un préstamo para TV. ¿Podrían ayudarme?"
+            const encodedMessage = encodeURIComponent(message)
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`
+            window.open(whatsappUrl, "_blank")
+          }}
+          className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 shadow-md rounded-full px-6 py-2"
+        >
+          Solicitar TV Ahora
+        </Button>
       </div>
     </motion.nav>
   )
