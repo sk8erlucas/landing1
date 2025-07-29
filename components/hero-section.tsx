@@ -1,8 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { ArrowRight, Zap, Shield, Clock } from "lucide-react"
+import { Zap, Shield, Clock } from "lucide-react"
 import Image from "next/image"
 import LoanCalculator from "@/components/loan-calculator"
 
@@ -48,25 +47,6 @@ export default function HeroSection() {
               Como un abuelo cariñoso, te ayudamos a conseguir la televisión que tanto deseas.
               <span className="block mt-2 text-green-400 font-semibold">¡Tu familia se lo merece!</span>
             </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="flex flex-col sm:flex-row gap-4 mb-8"
-            >
-              <Button size="lg" className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-lg px-8 py-4 shadow-lg">
-                Conseguir Mi TV
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="text-white border-white/30 hover:bg-white/10 hover:text-white text-lg px-8 py-4 bg-white/10 backdrop-blur-sm"
-              >
-                Calcular Cuotas
-              </Button>
-            </motion.div>
 
             <motion.div
               initial={{ opacity: 0, y: 30 }}

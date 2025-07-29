@@ -16,12 +16,12 @@ export default function Navbar() {
         <div className="flex items-center space-x-3">
           <Image
             src="/abuelito_base.png"
-            alt="Tu Abuelito Te La Presta Logo"
+            alt="Mi abuelito te presta Logo"
             width={50}
             height={50}
             className="rounded-full"
           />
-          <span className="text-xl font-bold text-purple-900 font-heading">Tu Abuelito Te La Presta</span>
+          <span className="text-xl font-bold text-purple-900 font-heading">Mi abuelito te presta</span>
         </div>
         <div className="hidden md:flex items-center space-x-6">
           <a href="#inicio" className="text-purple-700 hover:text-purple-600 transition-colors font-medium font-body">
@@ -39,7 +39,7 @@ export default function Navbar() {
           <a href="#contacto" className="text-purple-700 hover:text-purple-600 transition-colors font-medium font-body">
             Contacto
           </a>
-          <Button className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 shadow-md">
+          <Button className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 shadow-md rounded-full px-6 py-2">
             Solicitar TV Ahora
           </Button>
         </div>

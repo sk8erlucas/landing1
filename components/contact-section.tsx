@@ -4,9 +4,8 @@ import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef } from "react"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
 import { Phone, Mail, MapPin, Clock } from "lucide-react"
+import LoanCalculator from "@/components/loan-calculator"
 
 export default function ContactSection() {
   const ref = useRef(null)
@@ -21,9 +20,9 @@ export default function ContactSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 font-heading">¿Listo para tu TV soñada?</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 font-heading">Calcula tu préstamo para TV</h2>
           <p className="text-xl text-green-200 max-w-3xl mx-auto">
-            Contáctanos y en menos de 2 horas podrás estar disfrutando de tu nueva TV. Tu abuelito te está esperando.
+            Descubre cuánto puedes solicitar y cuáles serían tus pagos semanales. ¡Tu TV soñada está al alcance de tu mano!
           </p>
         </motion.div>
 
@@ -42,7 +41,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h4 className="font-semibold">WhatsApp</h4>
-                  <p className="text-green-200">+52 812 474 7218</p>
+                  <p className="text-green-200">+52 1 81 2596 1512</p>
                 </div>
               </div>
 
@@ -81,7 +80,18 @@ export default function ContactSection() {
             <div className="mt-8 p-6 bg-green-500 rounded-2xl">
               <h4 className="font-bold text-lg mb-2">📺 ¡Tu TV te está esperando!</h4>
               <p className="mb-4">Escríbenos por WhatsApp y en 2 horas tendrás tu TV soñada</p>
-              <Button className="bg-white text-green-600 hover:bg-gray-100 font-semibold">Chatear ahora</Button>
+              <Button 
+                onClick={() => {
+                  const phoneNumber = "+5218125961512"
+                  const message = "¡Hola! Me interesa conseguir una TV nueva. ¿Podrían ayudarme con información?"
+                  const encodedMessage = encodeURIComponent(message)
+                  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`
+                  window.open(whatsappUrl, "_blank")
+                }}
+                className="bg-white text-green-600 hover:bg-gray-100 font-semibold"
+              >
+                Chatear ahora
+              </Button>
             </div>
           </motion.div>
 
@@ -89,49 +99,9 @@ export default function ContactSection() {
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.4 }}
+            className="flex justify-center"
           >
-            <div className="bg-white/95 backdrop-blur-sm border border-purple-100 rounded-2xl p-8 text-gray-800">
-              <h3 className="text-2xl font-bold mb-6">Solicita tu TV soñada</h3>
-
-              <form className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-medium mb-2">Nombre</label>
-                    <Input placeholder="Tu nombre completo" />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium mb-2">Teléfono</label>
-                    <Input placeholder="Tu número de WhatsApp" />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium mb-2">Email</label>
-                  <Input type="email" placeholder="tu@email.com" />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium mb-2">¿Qué TV quieres?</label>
-                  <select className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500">
-                    <option>Smart TV 32&quot;</option>
-                    <option>Smart TV 43&quot;</option>
-                    <option>Smart TV 55&quot;</option>
-                    <option>Smart TV 65&quot;</option>
-                    <option>TV 4K Gaming</option>
-                    <option>TV OLED Premium</option>
-                    <option>TV 75&quot; o más grande</option>
-                    <option>No estoy seguro</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium mb-2">Cuéntanos tu sueño</label>
-                  <Textarea placeholder="¿Para qué quieres tu TV? ¿Películas familiares, gaming, deportes? Cuéntanos..." rows={4} />
-                </div>
-
-                <Button className="w-full bg-green-600 hover:bg-green-700 text-white py-3 font-semibold">🚀 Solicitar mi TV ahora</Button>
-              </form>
-            </div>
+            <LoanCalculator />
           </motion.div>
         </div>
       </div>

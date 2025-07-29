@@ -90,20 +90,38 @@ export default function BenefitsSection() {
         >
           <div className="flex justify-center mb-6">
             <Image
-              src="/abuelito_base.png"
-              alt="Tu Abuelito Te La Presta Logo"
-              width={80}
-              height={80}
-              className="rounded-full border-4 border-white/20"
+              src="/watching_tv.jpg"
+              alt="Familia mexicana disfrutando televisión"
+              width={360}
+              height={360}
+              className="rounded-full border-4 border-white/20 object-cover"
             />
           </div>
           <h3 className="text-3xl md:text-4xl font-bold mb-4 font-heading">¿Listo para conseguir lo que necesitas?</h3>
           <p className="text-xl mb-8 opacity-90 font-body font-semibold">Miles de familias ya han confiado en nosotros para conseguir la TV de sus sueños</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-purple-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors font-body">
+            <button
+              onClick={() => {
+                const phoneNumber = "+5218125961512"
+                const message = "¡Hola! Me interesa conseguir una TV nueva. ¿Podrían ayudarme con el proceso?"
+                const encodedMessage = encodeURIComponent(message)
+                const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`
+                window.open(whatsappUrl, "_blank")
+              }}
+              className="bg-white text-purple-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors font-body"
+            >
               Conseguir Mi TV
             </button>
-            <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-purple-600 transition-colors font-body">
+            <button
+              onClick={() => {
+                const phoneNumber = "+5218125961512"
+                const message = "¡Hola! Tengo preguntas sobre los préstamos para TV. ¿Me pueden ayudar?"
+                const encodedMessage = encodeURIComponent(message)
+                const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`
+                window.open(whatsappUrl, "_blank")
+              }}
+              className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-purple-600 transition-colors font-body"
+            >
               Hablar por WhatsApp
             </button>
           </div>

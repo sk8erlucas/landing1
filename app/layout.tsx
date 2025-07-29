@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Tu Abuelito Te La Presta - Préstamos Rápidos para Electrodomésticos",
+  title: "Mi abuelito te presta - Préstamos Rápidos para Electrodomésticos",
   description: "Consigue esa televisión, computadora o electrodoméstico que tanto necesitas. Préstamos rápidos, fáciles y confiables. Aprobación en minutos.",
   keywords: "préstamos, electrodomésticos, televisiones, computadoras, financiamiento, crédito rápido, México",
-  authors: [{ name: "Tu Abuelito Te La Presta" }],
-  creator: "Tu Abuelito Te La Presta",
-  publisher: "Tu Abuelito Te La Presta",
+  authors: [{ name: "Mi abuelito te presta" }],
+  creator: "Mi abuelito te presta",
+  publisher: "Mi abuelito te presta",
   formatDetection: {
     email: false,
     address: false,
@@ -18,16 +18,16 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Tu Abuelito Te La Presta - Préstamos Rápidos para Electrodomésticos",
+    title: "Mi abuelito te presta - Préstamos Rápidos para Electrodomésticos",
     description: "Consigue esa televisión, computadora o electrodoméstico que tanto necesitas. Préstamos rápidos, fáciles y confiables.",
     url: "https://tuabuelitotelapresta.com",
-    siteName: "Tu Abuelito Te La Presta",
+    siteName: "Mi abuelito te presta",
     images: [
       {
         url: "/hero.webp",
         width: 1200,
         height: 630,
-        alt: "Tu Abuelito Te La Presta - Préstamos Rápidos",
+        alt: "Mi abuelito te presta - Préstamos Rápidos",
       },
     ],
     locale: "es_MX",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tu Abuelito Te La Presta - Préstamos Rápidos para Electrodomésticos",
+    title: "Mi abuelito te presta - Préstamos Rápidos para Electrodomésticos",
     description: "Consigue esa televisión, computadora o electrodoméstico que tanto necesitas. Préstamos rápidos, fáciles y confiables.",
     images: ["/hero.webp"],
   },
