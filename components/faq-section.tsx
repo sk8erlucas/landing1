@@ -131,12 +131,6 @@ export default function FaqSection() {
               >
                 💬 Chatear por WhatsApp
               </a>
-              <a
-                href="#contacto"
-                className="border-2 border-purple-300 text-purple-600 hover:bg-purple-50 px-6 py-3 rounded-lg font-semibold transition-all duration-300"
-              >
-                Contactar por teléfono
-              </a>
             </div>
           </div>
         </motion.div>

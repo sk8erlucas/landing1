@@ -145,19 +145,6 @@ export default function BenefitsSection() {
                 <span className="text-2xl group-hover:animate-bounce">📺</span>
                 Conseguir Mi TV
               </button>
-              <button
-                onClick={() => {
-                  const phoneNumber = "528124747218"
-                  const message = "¡Hola! Tengo preguntas sobre los préstamos para TV. ¿Me pueden ayudar?"
-                  const encodedMessage = encodeURIComponent(message)
-                  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`
-                  window.open(whatsappUrl, "_blank")
-                }}
-                className="group border-3 border-white text-white px-10 py-4 rounded-2xl font-semibold hover:bg-white hover:text-purple-600 transition-all duration-300 font-body shadow-lg hover:shadow-xl hover:scale-105 flex items-center gap-3"
-              >
-                <span className="text-2xl group-hover:animate-pulse">💬</span>
-                Hablar por WhatsApp
-              </button>
             </div>
           </div>
         </motion.div>
