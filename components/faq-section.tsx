@@ -56,7 +56,7 @@ function FAQItem({ faq, index }: { faq: FAQ; index: number }) {
           <ChevronDown className="h-5 w-5 text-purple-600 flex-shrink-0" />
         )}
       </button>
-      
+
       {isOpen && (
         <motion.div
           initial={{ opacity: 0, height: 0 }}
@@ -130,7 +130,7 @@ export default function FaqSection() {
               ¿Tienes otra pregunta?
             </h3>
             <p className="text-purple-700 mb-6">
-              Nuestro equipo está aquí para ayudarte con cualquier duda que tengas sobre tu nueva TV
+              Nuestro equipo está aquí para ayudarte con cualquier duda que tengas, ¡Contáctate con nosotros!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a

@@ -16,14 +16,14 @@ export default function Navbar() {
         <div className="flex items-center space-x-3">
           <Image
             src="/abuelito_base.png"
-            alt="Mi abuelito te presta Logo"
-            width={50}
-            height={50}
-            className="rounded-full"
+            alt="Mi Abuelito Te Presta Logo"
+            width={60}
+            height={60}
+            className="rounded-full shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-110"
           />
           <span className="text-xl font-bold text-purple-900 font-heading">Mi abuelito te presta</span>
         </div>
-        <Button 
+        <Button
           onClick={() => {
             const phoneNumber = "528124747218"
             const message = "¡Hola! Me interesa solicitar un préstamo para TV. ¿Podrían ayudarme?"

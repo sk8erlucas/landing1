@@ -6,6 +6,7 @@ import ContactSection from "@/components/contact-section"
 import WhatsAppButton from "@/components/whatsapp-button"
 import FaqSection from "@/components/faq-section"
 import Navbar from "@/components/navbar"
+import Footer from "@/components/footer"
 
 export default function HomePage() {
   return (
@@ -18,6 +19,7 @@ export default function HomePage() {
         <FaqSection />
         <ContactSection />
       </main>
+      <Footer />
       <WhatsAppButton />
     </div>
   )
