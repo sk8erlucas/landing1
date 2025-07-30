@@ -5,7 +5,7 @@ import { useInView } from "framer-motion"
 import { useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { Phone, Mail, MapPin, Clock } from "lucide-react"
-import LoanCalculator from "@/components/loan-calculator"
+import LoanApplicationForm from "@/components/calculator/loan-application-form"
 
 export default function ContactSection() {
   const ref = useRef(null)
@@ -101,7 +101,7 @@ export default function ContactSection() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="flex justify-center"
           >
-            <LoanCalculator />
+            <LoanApplicationForm />
           </motion.div>
         </div>
       </div>
