@@ -20,9 +20,9 @@ export default function ContactSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 font-heading">Calcula tu préstamo para TV</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 font-heading">¡Calcula tu Préstamo!</h2>
           <p className="text-xl text-green-200 max-w-3xl mx-auto">
-            Descubre cuánto puedes solicitar y cuáles serían tus pagos semanales. ¡Tu TV soñada está al alcance de tu mano!
+            Descubre cuánto puedes solicitar y cuáles serían tus pagos semanales. ¡Tus sueños están al alcance de tu mano!
           </p>
         </motion.div>
 
@@ -78,8 +78,8 @@ export default function ContactSection() {
             </div>
 
             <div className="mt-8 p-6 bg-green-500 rounded-2xl">
-              <h4 className="font-bold text-lg mb-2">📺 ¡Tu TV te está esperando!</h4>
-              <p className="mb-4">Escríbenos por WhatsApp y en 2 horas tendrás tu TV soñada</p>
+              <h4 className="font-bold text-lg mb-2">¡Tu préstamo te está esperando!</h4>
+              <p className="mb-4">¡Completa el formulario y tu préstamo se acreditará en menos de 48 horas!</p>
               <Button 
                 onClick={() => {
                   const phoneNumber = "+5218125961512"
@@ -90,7 +90,7 @@ export default function ContactSection() {
                 }}
                 className="bg-white text-green-600 hover:bg-gray-100 font-semibold"
               >
-                Chatear ahora
+                ¡Aplica ahora!
               </Button>
             </div>
           </motion.div>

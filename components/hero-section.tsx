@@ -64,7 +64,7 @@ export default function HeroSection() {
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="h-5 w-5 text-green-400" />
-                <span className="text-sm text-gray-100">TV el mismo día</span>
+                <span className="text-sm text-gray-100">Acreditación en menos de 48 horas</span>
               </div>
             </motion.div>
           </motion.div>

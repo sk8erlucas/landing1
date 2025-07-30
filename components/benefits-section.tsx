@@ -13,8 +13,8 @@ export default function BenefitsSection() {
   const benefits = [
     {
       icon: Clock,
-      title: "TV el Mismo Día",
-      description: "Aprobación rápida y entrega inmediata. Tu familia no puede esperar más.",
+      title: "Acreditación en menos de 48 horas",
+      description: "Obtiene tu préstamo de forma rápida y sencilla. No pierdes tiempo.",
     },
     {
       icon: Shield,
@@ -39,7 +39,7 @@ export default function BenefitsSection() {
               transition={{ duration: 0.8 }}
             >
               <h1 className="text-3xl font-semibold text-purple-900 capitalize lg:text-4xl font-heading">
-                ¿Por qué elegir tu <br /> TV con abuelito?
+                ¿Por qué confiar en <br /> mi Abuelito?
               </h1>
 
               <div className="mt-2">
@@ -82,8 +82,8 @@ export default function BenefitsSection() {
           >
             <div className="flex items-center justify-center">
               <Image
-                className="w-[28rem] h-[28rem] object-cover xl:w-[34rem] xl:h-[34rem] rounded-full shadow-2xl"
-                src="/abuelito_idea.png"
+                className="w-[28rem] h-[28rem] object-cover xl:w-[34rem] xl:h-[34rem]"
+                src="/abuelito_base.png"
                 alt="Mi abuelito te presta - Préstamos para TV"
                 width={544}
                 height={544}
@@ -103,7 +103,7 @@ export default function BenefitsSection() {
           <div className="absolute bottom-0 right-0 w-32 h-32 bg-green-400/20 rounded-full translate-x-16 translate-y-16 animate-bounce"></div>
           <div className="absolute top-1/2 left-1/4 w-6 h-6 bg-yellow-300/50 rounded-full animate-ping"></div>
           <div className="absolute top-1/4 right-1/3 w-4 h-4 bg-green-300/50 rounded-full animate-pulse"></div>
-          
+
           <div className="relative z-10">
             <div className="flex justify-center mb-8">
               <div className="relative">
@@ -118,19 +118,19 @@ export default function BenefitsSection() {
                 <div className="absolute -inset-2 rounded-full border-2 border-dashed border-white/40 animate-spin-slow"></div>
               </div>
             </div>
-            
+
             <h3 className="text-3xl md:text-5xl font-bold mb-6 font-heading leading-tight">
-              ¿Listo para conseguir 
+              ¿Listo para conseguir
               <span className="block text-transparent bg-gradient-to-r from-yellow-300 to-green-300 bg-clip-text">
                 lo que necesitas?
               </span>
             </h3>
-            
+
             <p className="text-xl md:text-2xl mb-10 opacity-90 font-body font-semibold max-w-2xl mx-auto leading-relaxed">
-              Miles de familias ya han confiado en nosotros para conseguir 
+              Miles de familias ya han confiado en nosotros para conseguir
               <span className="text-green-300 font-bold"> la TV de sus sueños</span>
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <button
                 onClick={() => {

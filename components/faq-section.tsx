@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { useState } from "react"
 import { ChevronDown, ChevronUp } from "lucide-react"
+import Image from "next/image"
 
 interface FAQ {
   question: string
@@ -16,11 +17,7 @@ const faqs: FAQ[] = [
   },
   {
     question: "¿Cuánto tiempo tarda la aprobación?",
-    answer: "Nuestro proceso de aprobación es súper rápido. En la mayoría de los casos, puedes tener una respuesta en menos de 30 minutos y llevar tu TV el mismo día."
-  },
-  {
-    question: "¿Qué marcas de televisiones manejan?",
-    answer: "Trabajamos con las mejores marcas del mercado: Samsung, LG, Sony, TCL, Hisense y más. Tenemos opciones desde Smart TV básicas hasta tecnología OLED y QLED de última generación."
+    answer: "Nuestro proceso de aprobación es súper rápido. En la mayoría de los casos, puedes tener una respuesta en menos de 30 minutos y tener el dinero disponible para lo que necesites."
   },
   {
     question: "¿Puedo elegir el plazo de pago?",
@@ -28,19 +25,11 @@ const faqs: FAQ[] = [
   },
   {
     question: "¿Hay algún enganche o pago inicial?",
-    answer: "No necesariamente. Dependiendo de tu perfil crediticio, puedes obtener tu TV sin enganche o con un mínimo pago inicial. Evaluamos cada caso de manera personalizada."
-  },
-  {
-    question: "¿Incluye garantía y servicio técnico?",
-    answer: "Sí, todas nuestras televisiones incluyen la garantía completa del fabricante y servicio técnico especializado. Tu tranquilidad es nuestra prioridad."
+    answer: "No necesariamente. Dependiendo de tu perfil crediticio, puedes obtener tu préstamo sin enganche o con un mínimo pago inicial. Evaluamos cada caso de manera personalizada."
   },
   {
     question: "¿Qué pasa si tengo historial crediticio negativo?",
     answer: "Entendemos que todos pasamos por momentos difíciles. Evaluamos cada solicitud de manera integral y tenemos opciones especiales para diferentes situaciones crediticias."
-  },
-  {
-    question: "¿Hacen entregas a domicilio?",
-    answer: "Sí, realizamos entregas gratuitas en la zona metropolitana. También ofrecemos instalación profesional para que disfrutes tu nueva TV desde el primer momento."
   }
 ]
 
@@ -103,10 +92,31 @@ export default function FaqSection() {
           </p>
         </motion.div>
 
-        <div className="max-w-4xl mx-auto space-y-4">
-          {faqs.map((faq, index) => (
-            <FAQItem key={index} faq={faq} index={index} />
-          ))}
+        <div className="lg:flex lg:gap-12 lg:items-start max-w-7xl mx-auto">
+          {/* FAQ Section */}
+          <div className="lg:w-2/3 space-y-4">
+            {faqs.map((faq, index) => (
+              <FAQItem key={index} faq={faq} index={index} />
+            ))}
+          </div>
+
+          {/* Image Section - Hidden on mobile */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="hidden lg:block lg:w-1/3 lg:sticky lg:top-20"
+          >
+            <div className="flex justify-center">
+              <Image
+                src="/abuelito_jumping.png"
+                alt="Abuelito saltando de alegría por ayudar con préstamos"
+                width={400}
+                height={400}
+                className="w-80 h-80 xl:w-96 xl:h-96 object-contain"
+              />
+            </div>
+          </motion.div>
         </div>
 
         <motion.div
