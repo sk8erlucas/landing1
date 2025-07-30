@@ -46,7 +46,7 @@ export default function LoanApplicationForm() {
 
   return (
     
-    <Card className="p-6 shadow-lg border-t-4 border-green-500">
+    <Card className="p-6 shadow-lg border-t-4 border-green-500 bg-white w-full max-w-md mx-auto min-h-[600px]">
       <StepIndicator currentStep={currentStep} totalSteps={4} />
 
       {currentStep === 1 && <LoanAmountStep initialAmount={formData.amount} onNext={handleNextStep} />}
@@ -54,7 +54,7 @@ export default function LoanApplicationForm() {
 
       {currentStep === 3 && (
         <DocumentUploadStep
-          onNext={handleNextStep}
+          onNext={() => handleNextStep({})}
           onPrev={handlePrevStep}
           onFileChange={(file) => setFormData((prev) => ({ ...prev, comprobanteDomicilio: file }))}
         />

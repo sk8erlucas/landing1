@@ -3,14 +3,30 @@
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
+import { useEffect, useState } from "react"
 
 export default function Navbar() {
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   return (
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-white/20 shadow-lg"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b shadow-lg ${
+        isScrolled 
+          ? "bg-white border-gray-200" 
+          : "bg-white/80 backdrop-blur-md border-white/20"
+      }`}
     >
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         <div className="flex items-center space-x-3">
@@ -25,15 +41,14 @@ export default function Navbar() {
         </div>
         <Button
           onClick={() => {
-            const phoneNumber = "528124747218"
-            const message = "¡Hola! Me interesa solicitar un préstamo para TV. ¿Podrían ayudarme?"
-            const encodedMessage = encodeURIComponent(message)
-            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`
-            window.open(whatsappUrl, "_blank")
+            const element = document.getElementById('calculator') || document.querySelector('[data-section="calculator"]') || document.querySelector('.contact-section')
+            if (element) {
+              element.scrollIntoView({ behavior: 'smooth' })
+            }
           }}
           className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 shadow-md rounded-full px-6 py-2"
         >
-          Solicitar TV Ahora
+          Solicitar Préstamo
         </Button>
       </div>
     </motion.nav>

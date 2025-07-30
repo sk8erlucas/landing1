@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import { Zap, Shield, Clock } from "lucide-react"
 import Image from "next/image"
-import LoanCalculator from "@/components/loan-calculator"
+import LoanApplicationForm from "@/components/calculator/loan-application-form"
 
 export default function HeroSection() {
   return (
@@ -20,7 +20,7 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-black/40"></div>
       </div>
 
-      <div className="relative z-10 container mx-auto px-4 py-20">
+      <div className="relative z-10 container mx-auto px-4 py-20 pt-32">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -74,9 +74,9 @@ export default function HeroSection() {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="relative"
+            className="relative mt-8 lg:mt-0"
           >
-            <LoanCalculator />
+            <LoanApplicationForm />
           </motion.div>
         </div>
       </div>

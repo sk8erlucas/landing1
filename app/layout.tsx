@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Toaster } from 'react-hot-toast';
 
 export const metadata: Metadata = {
   title: "Mi abuelito te presta - Préstamos Rápidos para Electrodomésticos",
@@ -73,6 +74,16 @@ export default function RootLayout({
         className="antialiased"
       >
         {children}
+        <Toaster 
+          position="top-right"
+          toastOptions={{
+            duration: 4000,
+            style: {
+              background: '#363636',
+              color: '#fff',
+            },
+          }}
+        />
       </body>
     </html>
   );

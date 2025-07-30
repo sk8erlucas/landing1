@@ -85,42 +85,46 @@ export default function PersonalInfoStep({ initialData, onNext }: PersonalInfoSt
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
-      <h2 className="text-xl font-semibold text-center text-gray-800 mb-6">Información Personal</h2>
+    <form onSubmit={handleSubmit} className="space-y-6 h-full">
+      <h2 className="text-xl font-semibold text-center text-gray-900 mb-6">Información Personal</h2>
 
-      <div className="space-y-4">
-        <div>
-          <Label htmlFor="nombre">Nombre</Label>
+      <div className="space-y-4 flex-1">
+        <div className="min-h-[80px]">
+          <Label htmlFor="nombre" className="text-gray-900 font-medium">Nombre</Label>
           <Input
             id="nombre"
             name="nombre"
             value={formData.nombre}
             onChange={handleChange}
-            className={errors.nombre ? "border-red-500" : ""}
+            className={`bg-white border-2 ${errors.nombre ? "border-red-500" : "border-gray-300"} text-gray-900`}
           />
-          {errors.nombre && (
-            <p className="text-red-500 text-sm mt-1 flex items-center">
-              <AlertCircle className="h-4 w-4 mr-1" />
-              {errors.nombre}
-            </p>
-          )}
+          <div className="min-h-[24px] mt-1">
+            {errors.nombre && (
+              <p className="text-red-500 text-sm flex items-center">
+                <AlertCircle className="h-4 w-4 mr-1" />
+                {errors.nombre}
+              </p>
+            )}
+          </div>
         </div>
 
-        <div>
-          <Label htmlFor="apellido">Apellido</Label>
+        <div className="min-h-[80px]">
+          <Label htmlFor="apellido" className="text-gray-900 font-medium">Apellido</Label>
           <Input
             id="apellido"
             name="apellido"
             value={formData.apellido}
             onChange={handleChange}
-            className={errors.apellido ? "border-red-500" : ""}
+            className={`bg-white border-2 ${errors.apellido ? "border-red-500" : "border-gray-300"} text-gray-900`}
           />
-          {errors.apellido && (
-            <p className="text-red-500 text-sm mt-1 flex items-center">
-              <AlertCircle className="h-4 w-4 mr-1" />
-              {errors.apellido}
-            </p>
-          )}
+          <div className="min-h-[24px] mt-1">
+            {errors.apellido && (
+              <p className="text-red-500 text-sm flex items-center">
+                <AlertCircle className="h-4 w-4 mr-1" />
+                {errors.apellido}
+              </p>
+            )}
+          </div>
         </div>
 
         {/* <div>
@@ -141,8 +145,8 @@ export default function PersonalInfoStep({ initialData, onNext }: PersonalInfoSt
             </p>
           )}
         </div> */}
-        <div>
-  <Label htmlFor="telefono">Teléfono Móvil</Label>
+        <div className="min-h-[80px]">
+  <Label htmlFor="telefono" className="text-gray-900 font-medium">Teléfono Móvil</Label>
   <PhoneInput
     country={'mx'} // Puedes cambiar el país por defecto
     value={formData.telefono}
@@ -161,11 +165,11 @@ export default function PersonalInfoStep({ initialData, onNext }: PersonalInfoSt
       height: '40px',
       paddingLeft: '48px',
       borderRadius: '4px',
-      border: '1px solid #ccc',
+      border: '2px solid #d1d5db',
       fontSize: '16px',
       fontFamily: 'Arial, sans-serif',
-      color: '#333',
-      backgroundColor: '#fff',
+      color: '#111827',
+      backgroundColor: '#ffffff',
       cursor: 'pointer',
       boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',}
     }
@@ -175,15 +179,17 @@ export default function PersonalInfoStep({ initialData, onNext }: PersonalInfoSt
       required: true,
     }}
   />
-  {errors.telefono && (
-    <p className="text-red-500 text-sm mt-1 flex items-center">
-      <AlertCircle className="h-4 w-4 mr-1" />
-      {errors.telefono}
-    </p>
-  )}
+  <div className="min-h-[24px] mt-1">
+    {errors.telefono && (
+      <p className="text-red-500 text-sm flex items-center">
+        <AlertCircle className="h-4 w-4 mr-1" />
+        {errors.telefono}
+      </p>
+    )}
+  </div>
 </div>
-        <div>
-          <Label htmlFor="email">Email (opcional)</Label>
+        <div className="min-h-[70px]">
+          <Label htmlFor="email" className="text-gray-900 font-medium">Email (opcional)</Label>
           <Input
             id="email"
             name="email"
@@ -191,58 +197,64 @@ export default function PersonalInfoStep({ initialData, onNext }: PersonalInfoSt
             value={formData.email}
             onChange={handleChange}
             placeholder="example@gmail.com"
-            className={errors.email ? "border-red-500" : ""}
+            className={`bg-white border-2 ${errors.email ? "border-red-500" : "border-gray-300"} text-gray-900`}
           />
         </div>
-<div>
-  <Label htmlFor="sede">Sede</Label>
-  <select
-    id="sede"
-    name="sede"
-    value={formData.sede}
-    onChange={handleChange}
-    className={`w-full p-2 border rounded-md ${errors.sede ? "border-red-500" : "border-gray-300"}`}
-  >
-    <option value="">Selecciona una sede</option>
-    <option value="mexicali">Mexicali</option>
-    <option value="monterrey">Monterrey</option>
-  </select>
-</div>
 
-        <div>
-          <Label htmlFor="curp">CURP</Label>
+        <div className="min-h-[70px]">
+          <Label htmlFor="sede" className="text-gray-900 font-medium">Sede</Label>
+          <select
+            id="sede"
+            name="sede"
+            value={formData.sede}
+            onChange={handleChange}
+            className={`w-full p-3 border-2 rounded-md text-gray-900 bg-white focus:border-green-500 focus:outline-none ${errors.sede ? "border-red-500" : "border-gray-300"}`}
+          >
+            <option value="">Selecciona una sede</option>
+            <option value="mexicali">Mexicali</option>
+            <option value="monterrey">Monterrey</option>
+          </select>
+        </div>
+
+        <div className="min-h-[110px]">
+          <Label htmlFor="curp" className="text-gray-900 font-medium">CURP</Label>
           <Input
             id="curp"
             name="curp"
             value={formData.curp}
             onChange={handleChange}
-            placeholder="Ej. ABCD123456HDFXYZ01"
-            className={errors.curp ? "border-red-500" : ""}
+            placeholder="Ej. MELJ850515HDFRNR09"
+            className={`bg-white border-2 ${errors.curp ? "border-red-500" : "border-gray-300"} text-gray-900`}
           />
-          {errors.curp && (
-            <p className="text-red-500 text-sm mt-1 flex items-center">
-              <AlertCircle className="h-4 w-4 mr-1" />
-              {errors.curp}
-            </p>
-          )}
+          <p className="text-xs text-gray-600 mt-1">Ejemplo: MELJ850515HDFRNR09 (María Elena López Jiménez)</p>
+          <div className="min-h-[24px] mt-1">
+            {errors.curp && (
+              <p className="text-red-500 text-sm flex items-center">
+                <AlertCircle className="h-4 w-4 mr-1" />
+                {errors.curp}
+              </p>
+            )}
+          </div>
         </div>
 
-        <div>
-          <Label htmlFor="CLABE">CLABE (Clave Bancaria Estandarizada)</Label>
+        <div className="min-h-[80px]">
+          <Label htmlFor="CLABE" className="text-gray-900 font-medium">CLABE (Clave Bancaria Estandarizada)</Label>
           <Input
             id="CLABE"
             name="CLABE"
             value={formData.CLABE}
             onChange={handleChange}
-            placeholder="Ej. ABCD123456HDFXYZ01"
-            className={errors.CLABE ? "border-red-500" : ""}
+            placeholder="Ej. 012345678901234567"
+            className={`bg-white border-2 ${errors.CLABE ? "border-red-500" : "border-gray-300"} text-gray-900`}
           />
-          {errors.CLABE && (
-            <p className="text-red-500 text-sm mt-1 flex items-center">
-              <AlertCircle className="h-4 w-4 mr-1" />
-              {errors.CLABE}
-            </p>
-          )}
+          <div className="min-h-[24px] mt-1">
+            {errors.CLABE && (
+              <p className="text-red-500 text-sm flex items-center">
+                <AlertCircle className="h-4 w-4 mr-1" />
+                {errors.CLABE}
+              </p>
+            )}
+          </div>
         </div>
 
       </div>

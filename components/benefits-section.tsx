@@ -105,67 +105,47 @@ export default function BenefitsSection() {
           <div className="absolute top-1/4 right-1/3 w-4 h-4 bg-green-300/50 rounded-full animate-pulse"></div>
 
           <div className="relative z-10">
-            <div className="flex justify-center mb-8">
-              <div className="relative w-96 h-96 overflow-hidden rounded-full border-4 border-white/30 shadow-xl bg-white">
-                {/* Imagen dividida diagonalmente */}
-                <div className="absolute inset-0 w-full h-full">
-                  {/* Lado izquierdo - imagen de TV */}
-                  <div
-                    className="absolute inset-0 bg-cover bg-center"
-                    style={{
-                      backgroundImage: "url('/watching_tv.jpg')",
-                      clipPath: "polygon(0 0, 50% 0, 50% 100%, 0 100%)"
-                    }}
-                  ></div>
-
-                  {/* Lado derecho - logo completo del abuelito */}
-                  <div
-                    className="absolute inset-0 bg-white flex items-center justify-center"
-                    style={{
-                      clipPath: "polygon(50% 0, 100% 0, 100% 100%, 50% 100%)"
-                    }}
-                  >
-                    <Image
-                      src="/abuelito_base.png"
-                      alt="Mi Abuelito Te Presta Logo"
-                      width={220}
-                      height={220}
-                      className="object-contain ml-36"
-                    />
-                  </div>
-
-                  {/* Línea divisoria vertical */}
-                  <div className="absolute top-0 bottom-0 left-1/2 w-0.5 bg-white/60 transform -translate-x-0.5"></div>
-                </div>
-
-                {/* Decorative ring around image */}
-                <div className="absolute -inset-2 rounded-full border-2 border-dashed border-white/40 animate-spin-slow"></div>
+            <div className="grid lg:grid-cols-5 gap-16 items-center">
+              {/* Imagen cortada diagonal a la izquierda - más ancha */}
+              <div className="lg:col-span-3 relative h-96 lg:h-[500px] overflow-hidden">
+                <div 
+                  className="absolute inset-0 bg-cover bg-center transform scale-110"
+                  style={{
+                    backgroundImage: "url('/watching_tv.jpg')",
+                    clipPath: "polygon(0 0, 85% 0, 70% 100%, 0 100%)"
+                  }}
+                ></div>
               </div>
-            </div>
 
-            <h3 className="text-3xl md:text-5xl font-bold mb-6 font-heading leading-tight">
-              ¿Listo para conseguir
-              <span className="block text-transparent bg-gradient-to-r from-yellow-300 to-green-300 bg-clip-text">
-                lo que necesitas?
-              </span>
-            </h3>
-
-            <p className="text-xl md:text-2xl mb-10 opacity-90 font-body font-semibold max-w-2xl mx-auto leading-relaxed">
-              Miles de familias ya han confiado en nosotros para cumplir sus sueños
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <button
-                onClick={() => {
-                  const element = document.getElementById('calculator') || document.querySelector('[data-section="calculator"]')
-                  if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' })
-                  }
-                }}
-                className="group bg-white text-purple-600 px-10 py-4 rounded-2xl font-semibold hover:bg-gray-100 transition-all duration-300 font-body shadow-lg hover:shadow-xl hover:scale-105"
-              >
-                ¡Aplica Ahora!
-              </button>
+              {/* Contenido a la derecha - con margen negativo para aprovechar el espacio del clip */}
+              <div className="lg:col-span-2 lg:-ml-32 space-y-8">
+                <div className="space-y-6">
+                  <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading leading-tight">
+                    ¿Listo para conseguir
+                    <span className="block text-transparent bg-gradient-to-r from-yellow-300 to-green-300 bg-clip-text">
+                      lo que necesitas?
+                    </span>
+                  </h3>
+                  
+                  <p className="text-xl md:text-2xl opacity-90 font-body font-semibold leading-relaxed">
+                    Miles de familias ya han confiado en nosotros para cumplir sus sueños
+                  </p>
+                </div>
+                
+                <div className="pt-4">
+                  <button
+                    onClick={() => {
+                      const element = document.getElementById('calculator') || document.querySelector('[data-section="calculator"]')
+                      if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' })
+                      }
+                    }}
+                    className="group bg-white text-purple-600 px-10 py-4 rounded-2xl font-semibold hover:bg-gray-100 transition-all duration-300 font-body shadow-lg hover:shadow-xl hover:scale-105"
+                  >
+                    ¡Aplica Ahora!
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </motion.div>
