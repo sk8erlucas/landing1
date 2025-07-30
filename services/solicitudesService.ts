@@ -6,7 +6,12 @@ export interface Solicitudes {
     apellido: string;
     telefono: string;
     curp: string;
-    comprobanteDomicilio: string;
+    email: string;
+    sede: string;
+    CLABE: string;
+    motivo: string;
+    amount: number;
+    comprobanteDomicilio: string | File | null;
   }
   
   // URL base para las peticiones a la API
@@ -32,29 +37,36 @@ export interface Solicitudes {
   };
   
   
-  /**
-   * Crea un nuevo cliente
-   * @param cliente Datos del cliente a crear
-   * @returns Promise con los datos del cliente creado
-   */
-  export const createSolicitud = async (data: Solicitudes): Promise<Solicitudes> => {
-    try {
-      const response = await fetch(`${API_URL}/solicitud_v2`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
-      
-      if (!response.ok) {
-        throw new Error(`Error al crear cliente: ${response.status}`);
-      }
-      
-      return await response.json();
-    } catch (error) {
-      console.error('Error al crear cliente:', error);
-      throw error;
+/**
+ * Crea un nuevo cliente
+ * @param cliente Datos del cliente a crear
+ * @returns Promise con los datos del cliente creado
+ */
+export const createSolicitud = async (data: Solicitudes): Promise<Solicitudes> => {
+  try {
+    // Convertir File a string o manejar el caso null
+    const processedData = {
+      ...data,
+      comprobanteDomicilio: data.comprobanteDomicilio instanceof File 
+        ? data.comprobanteDomicilio.name 
+        : data.comprobanteDomicilio || ""
+    };
+
+    const response = await fetch(`${API_URL}/solicitud_v2`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(processedData),
+    });
+    
+    if (!response.ok) {
+      throw new Error(`Error al crear cliente: ${response.status}`);
     }
-  };
-  
+    
+    return await response.json();
+  } catch (error) {
+    console.error('Error al crear cliente:', error);
+    throw error;
+  }
+};  

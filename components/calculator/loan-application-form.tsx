@@ -23,7 +23,7 @@ export default function LoanApplicationForm() {
     CLABE:"",
     motivo:"",
     amount: 12000,
-    comprobanteDomicilio: "",
+    comprobanteDomicilio: "" as string | File | null,
   })
 
   const handleNextStep = (data: Partial<typeof formData>) => {
