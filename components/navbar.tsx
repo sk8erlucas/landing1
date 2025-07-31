@@ -41,10 +41,11 @@ export default function Navbar() {
         </div>
         <Button
           onClick={() => {
-            const element = document.getElementById('calculator') || document.querySelector('[data-section="calculator"]') || document.querySelector('.contact-section')
-            if (element) {
-              element.scrollIntoView({ behavior: 'smooth' })
-            }
+            const phoneNumber = "+5218131101218"
+            const message = "¡Hola! Me interesa solicitar un préstamo. ¿Podrían ayudarme con información?"
+            const encodedMessage = encodeURIComponent(message)
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`
+            window.open(whatsappUrl, "_blank")
           }}
           className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 shadow-md rounded-full px-6 py-2"
         >

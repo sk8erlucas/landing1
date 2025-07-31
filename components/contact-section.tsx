@@ -41,7 +41,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h4 className="font-semibold">WhatsApp</h4>
-                  <p className="text-green-200">+52 1 81 2596 1512</p>
+                  <p className="text-green-200">+52 1 81 3110 1218</p>
                 </div>
               </div>
 
@@ -82,7 +82,7 @@ export default function ContactSection() {
               <p className="mb-4">¡Completa el formulario y tu préstamo se acreditará en menos de 48 horas!</p>
               <Button 
                 onClick={() => {
-                  const phoneNumber = "+5218125961512"
+                  const phoneNumber = "+5218131101218"
                   const message = "¡Hola! Me interesa conseguir una TV nueva. ¿Podrían ayudarme con información?"
                   const encodedMessage = encodeURIComponent(message)
                   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`

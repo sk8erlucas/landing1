@@ -32,7 +32,7 @@ export default function LoanCalculator() {
   const ivaRate = 0.16
 
   const openWhatsApp = (message: string) => {
-    const phoneNumber = "+5218125961512"
+    const phoneNumber = "+5218131101218"
     const encodedMessage = encodeURIComponent(message)
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`
     window.open(whatsappUrl, "_blank")

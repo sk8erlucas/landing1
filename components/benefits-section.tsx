@@ -135,10 +135,11 @@ export default function BenefitsSection() {
                 <div className="pt-4">
                   <button
                     onClick={() => {
-                      const element = document.getElementById('calculator') || document.querySelector('[data-section="calculator"]')
-                      if (element) {
-                        element.scrollIntoView({ behavior: 'smooth' })
-                      }
+                      const phoneNumber = "+5218131101218"
+                      const message = "¡Hola! Me interesa conseguir una TV nueva. ¿Podrían ayudarme con el proceso de préstamo?"
+                      const encodedMessage = encodeURIComponent(message)
+                      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`
+                      window.open(whatsappUrl, "_blank")
                     }}
                     className="group bg-white text-purple-600 px-10 py-4 rounded-2xl font-semibold hover:bg-gray-100 transition-all duration-300 font-body shadow-lg hover:shadow-xl hover:scale-105"
                   >
